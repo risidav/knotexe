@@ -1,0 +1,59 @@
+﻿:root {
+    --glass: rgba(255,255,255,.06);
+}
+
+.card-lista {
+    background: var(--glass);
+    border: 1px solid rgba(255,255,255,.08);
+    transition: transform .15s ease, box-shadow .15s ease, border-color .2s;
+}
+
+    .card-lista:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(0,0,0,.35);
+        border-color: rgba(255,255,255,.18);
+    }
+
+.badge-soft {
+    background-color: rgba(255,255,255,.08);
+    color: #cbd5e1;
+}
+
+.tag-private {
+    border: 1px dashed rgba(255,255,255,.25);
+}
+
+.list-group-item {
+    background-color: #12161b;
+    border-color: rgba(255,255,255,.06);
+}
+
+    .list-group-item:hover {
+        background-color: #161b21;
+    }
+
+.btn-outline-secondary {
+    color: #cbd5e1;
+    border-color: rgba(255,255,255,.18);
+}
+
+    .btn-outline-secondary:hover {
+        background: #1f242b;
+        color: #fff;
+    }
+
+input.form-control, textarea.form-control, select.form-select {
+    box-shadow: none !important;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+.shadow-soft {
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}

@@ -1,0 +1,95 @@
+﻿<link rel="stylesheet" href="~/css/Listas.css" />
+
+<div class="container py-4">
+    <div class="row g-3 align-items-center mb-4">
+        <div class="col-lg-9">
+            <div class="input-group">
+                <span class="input-group-text bg-secondary-subtle border-secondary text-light"><i class="bi bi-search"></i></span>
+                <input id="searchInput" class="form-control bg-dark text-light border-secondary" placeholder="Buscar listas...">
+                <a class="navbar-brand fw-bold" href="./">
+                    <i class="bi bi-controller me-2"></i>Knot.exe
+                  </a>
+            </div>
+        </div>
+        <div class="col-lg-3 text-lg-end">
+            <div class="btn-group" role="group">
+                <input type="radio" class="btn-check" name="filterVis" id="filterAll" checked>
+                <label class="btn btn-outline-secondary" for="filterAll">Todas</label>
+                <input type="radio" class="btn-check" name="filterVis" id="filterPublic">
+                <label class="btn btn-outline-secondary" for="filterPublic">Públicas</label>
+                <input type="radio" class="btn-check" name="filterVis" id="filterPrivate">
+                <label class="btn btn-outline-secondary" for="filterPrivate">Privadas</label>
+            </div>
+        </div>
+    </div>
+
+    <section class="mb-5" id="secPopulares">
+        <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-graph-up-arrow text-success me-2 fs-4"></i>
+            <h5 class="m-0">Listas Populares</h5>
+        </div>
+        <div class="row g-3" id="gridPopulares"></div>
+    </section>
+
+    <section class="mb-5" id="secRecentes">
+        <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-clock-history text-info me-2 fs-4"></i>
+            <h5 class="m-0">Adicionado Recentemente</h5>
+        </div>
+        <div class="row g-3" id="gridRecentes"></div>
+    </section>
+
+    <section class="mb-2">
+        <h5 class="mb-3">Todas as Listas</h5>
+        <div class="row g-3" id="gridTodas"></div>
+    </section>
+</div>
+
+<!-- Modal Nova Lista -->
+<div class="modal fade" id="modalNovaLista" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-light border-secondary">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title"><i class="bi bi-plus-circle me-2"></i>Criar Nova Lista</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-3">
+                    <img id="previewCapa" src="~/assets/gamecover.png" class="rounded object-fit-cover shadow" style="width:140px;height:140px" alt="Capa">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Título da Lista *</label>
+                    <input id="novaTitulo" class="form-control bg-dark text-light border-secondary" placeholder="Ex: Meus RPGs Favoritos">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Descrição</label>
+                    <textarea id="novaDesc" class="form-control bg-dark text-light border-secondary" rows="3" placeholder="Descreva sua lista..."></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Capa</label>
+                    <select id="novaCapa" class="form-select bg-dark text-light border-secondary">
+                        <option value="~/assets/gamecover.png">Indie</option>
+                        <option value="~/assets/gamecover.png">Multiplayer</option>
+                        <option value="~/assets/gamecover.png">Aventura</option>
+                        <option value="~/assets/gamecover.png">RPG</option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Visibilidade</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="novaVis" id="visPublic" value="public" checked>
+                        <label class="form-check-label" for="visPublic">Pública</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="novaVis" id="visPrivate" value="private">
+                        <label class="form-check-label" for="visPrivate">Privada</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-secondary">
+                <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button id="btnCriarLista" class="btn btn-success">Criar Lista</button>
+            </div>
+        </div>
+    </div>
+</div>

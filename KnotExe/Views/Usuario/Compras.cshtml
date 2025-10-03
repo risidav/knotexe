@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Compras";
+}
+
+<link rel="stylesheet" href="~/css/Compras.css" />
+
+<div class="container py-5 px-3">
+    <h1 class="mb-3 text-knot-white price-title">Exiba seu jogo aqui</h1>
+    <p class="text-knot-white price-p" style="margin-top: 40px; margin-bottom: 50px;">
+        O knot.exe oferece um sistema de criação de nós para desenvolvedores terem uma
+        página de exibiçao para seu jogo, onde os usuários podem ver, avaliar, adicionar em
+        listas e criar um nó
+    </p>
+    <div class="container" style="margin-top: 20px;">
+        <div class="row justify-content-center g-4">
+            <div class="col-12 col-md-10 col-sm-10 col-lg-6 col-xl-4">
+                <div class="card plan-card bg-darklite-knot">
+                    <div class="card-body">
+                        <h1 class="text-knot-white price-title">Standard</h1>
+                        <h2 class="text-knot-white price-text mb-2">R$24,90</h2>
+                        <ul class="card-component-y text-knot-white">
+                            <li> oferece o dominio para um jogo</li>
+                        </ul>
+                        <div class="card-component-x">
+                            <a href="#" class="btn-knot card-link">Escolher</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-10 col-sm-10 col-lg-6 col-xl-4">
+                <div class="card plan-card bg-darklite-knot">
+                    <div class="card-body">
+                        <h1 class="text-knot-white price-title">Premium</h1>
+                        <h2 class="text-knot-white price-text mb-2">R$29,90</h2>
+                        <ul class="card-component-y text-knot-white">
+                            <li> oferece o dominio para um jogo</li>
+                            <li> Postagem oficial ao lançamento do jogo</li>
+                        </ul>
+                        <div class="card-component-x">
+                            <a href="#" class="btn-knot card-link">Escolher</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-10 col-sm-10 col-lg-6 col-xl-4">
+                <div class="card plan-card bg-darklite-knot">
+                    <div class="card-body">
+                        <h1 class="text-knot-white price-title">Deluxe</h1>
+                        <h2 class="text-knot-white price-text mb-2">R$39,90</h2>
+                        <ul class="card-component-y text-knot-white">
+                            <li> oferece o dominio para um jogo</li>
+                            <li>Postagem oficial ao lançamento do jogo eatualizações </li>
+                        </ul>
+                        <div class="card-component-x">
+                            <a href="#" class="btn-knot card-link">Escolher</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p class="price-p text-knot-white" style="margin-top: 20px;">
+            * Todos os jogos a serem postados por desenvolvedores e que fizeram a compra de um dominio terão
+            seus jogos verificados antes da postagem, o desenvolvedor só pagará pelo dominio após a certificação
+            do jogo
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

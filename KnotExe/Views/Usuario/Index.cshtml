@@ -1,0 +1,66 @@
+﻿@model IEnumerable<KnotExe.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="text-knot-white">
+    <h1>Index</h1>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr class="text-knot-white">
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuNome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuUsername)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuEmail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuSenhaHash)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuBio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuTipo)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+                <tr class="text-knot-white">
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuNome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuUsername)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuSenhaHash)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuBio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuTipo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.idUsuario">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.idUsuario">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.idUsuario">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>

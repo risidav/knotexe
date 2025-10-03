@@ -1,0 +1,61 @@
+﻿@model KnotExe.Models.Usuario
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<link rel="stylesheet" href="~/css/Cadastro.css" />
+
+<div class="maincontainer">
+    <div class="cornerbox">
+        <img class="w-100" src="~/uploads/deco2.png" />
+    </div>
+    <div class="middlebox">
+        <div class="cd-container mx-auto my-auto">
+            <div class="cd-icon"></div>
+            <h2 class="text-knot-white cd-h2">Bem-vindo de volta</h2>
+            <p class="text-knot-white cd-p">Entre na sua conta para continuar</p>
+
+            <form id="cadastroForm" asp-action="Cadastro" asp-controller="Usuario" method="post" onsubmit="return validarFormulario()">
+                <input type="hidden" id="tipoConta" value="jogador">
+
+                <label asp-for="UsuEmail" class="text-knot-white">Email</label>
+                <div class="form-group input-container">
+                    <input asp-for="UsuEmail" class="input-box" type="email" id="email" placeholder="seu@email.com" required>
+                    <span asp-validation-for="UsuEmail" class="text-danger"></span>
+                </div>
+
+                <label asp-for="UsuUsername" class="text-knot-white">Nome de usuário</label>
+                <div class="form-group input-container">
+                    <input asp-for="UsuUsername" class="input-box" type="text" id="usuario" placeholder="username" required>
+                    <span asp-validation-for="UsuUsername" class="text-danger"></span>
+                </div>
+
+                <label asp-for="UsuSenhaHash" class="text-knot-white">Senha</label>
+                <div class="form-group input-container">
+                    <input asp-for="UsuSenhaHash" class="input-box" type="password" id="senha" placeholder="mínimo 8 caracteres" required>
+                    <span asp-validation-for="UsuSenhaHash" class="text-danger" onclick="toggleSenha('senha')"></span>
+                </div>
+
+                <div class="input-container">
+                    <div class="text-center w-100 my-3">
+                        <button type="submit" class="btn btn-knot btn-cd" asp-controller="Timeline" asp-action="Index">Entrar</button>
+                    </div>
+                </div>
+
+                <p class="cd-p">Não possui conta? <a class="text-knot-purple knot-link text-body-secondary" asp-controller="Usuario" asp-action="Cadastro">Cadastrar-se</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="cornerbox">
+        <img class="w-100" src="~/uploads/deco1.png" />
+    </div>
+</div>
+
+<script src="/js/CadastroLogin.js"></script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

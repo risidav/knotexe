@@ -1,0 +1,50 @@
+﻿<link rel="stylesheet" href="~/css/Listas.css" />
+
+<main class="container py-4" id="pageLista">
+    <!-- Header da lista -->
+    <div class="d-flex flex-column flex-md-row gap-4 align-items-center align-items-md-end mb-4">
+        <img id="listaCapa" class="rounded shadow" style="width:180px;height:180px;object-fit:cover" alt="Capa da lista">
+        <div class="flex-fill">
+            <div class="text-uppercase small text-secondary fw-semibold mb-2">
+                <i class="bi bi-people me-1"></i><span id="listaTipo">LISTA</span>
+            </div>
+            <h1 class="display-5 fw-bold" id="listaTitulo">—</h1>
+            <p class="text-secondary" id="listaDesc">—</p>
+            <div class="d-flex flex-wrap gap-3 small text-secondary">
+                <span><i class="bi bi-controller me-1"></i><span id="listaQtJogos">0</span> jogos</span>
+                <span><i class="bi bi-star-fill me-1 text-warning"></i><span id="listaCurtidas">0</span> curtidas</span>
+                <span><i class="bi bi-calendar3 me-1"></i>Criado em <span id="listaData">—</span></span>
+            </div>
+        </div>
+        <div class="d-flex gap-2">
+            <button id="btnAddJogo" class="btn btn-success"><i class="bi bi-plus-lg me-1"></i>Adicionar</button>
+            <button id="btnCurtir" class="btn btn-outline-light"><i class="bi bi-heart me-1"></i>Curtir</button>
+        </div>
+    </div>
+
+    <div class="list-group list-group-flush bg-dark rounded-4 overflow-hidden shadow" id="listaJogos">
+        <!-- linhas de jogo -->
+    </div>
+</main>
+
+<!-- Modal Adicionar Jogos -->
+<div class="modal fade" id="modalAddJogo" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark text-light border-secondary">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title"><i class="bi bi-plus-circle me-2"></i>Adicionar Jogos</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-secondary-subtle border-secondary text-light"><i class="bi bi-search"></i></span>
+                    <input id="buscaJogo" class="form-control bg-dark text-light border-secondary" placeholder="Buscar jogos por nome ou gênero...">
+                </div>
+                <div class="list-group" id="listaResultados"></div>
+            </div>
+            <div class="modal-footer border-secondary">
+                <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

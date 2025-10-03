@@ -1,0 +1,37 @@
+﻿@model KnotExe.Models.Timeline
+<link rel="stylesheet" href="~/css/Timeline.css" />
+
+@{
+    ViewData["Title"] = "Timeline";
+}
+
+<div class="tm-box container-fluid d-flex">
+    <div class="tm-gamebox">
+        <div class="tm-gamebox-grid">
+            @Html.Partial("_GameComponent")
+            @Html.Partial("_GameComponent")
+            @Html.Partial("_GameComponent")
+            @Html.Partial("_GameComponent")
+        </div>
+    </div>
+    <div class="tm-postbox">
+        @if (Model.Posts != null && Model.Posts.Any())
+        {
+            foreach (var post in Model.Posts)
+            {
+                if(post.PosTipo == "post")
+                {
+                    @Html.Partial("_PostComponent", post)
+                }
+                else
+                {
+                    <p>Nenhum post disponível!!!!</p>
+                }
+            }
+        }
+        else
+        {
+                <p>Nenhum post disponível</p>
+        }
+    </div>
+</div>

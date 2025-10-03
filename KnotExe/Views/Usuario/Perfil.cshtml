@@ -1,0 +1,50 @@
+﻿@model KnotExe.Models.Usuario
+
+@{
+    ViewData["Title"] = "Perfil";
+}
+
+<link rel="stylesheet" href="~/css/Perfil.css" />
+
+<div class="container mt-5">
+
+    <!-- Header -->
+    <div class="profile-header text-center">
+        <img src="/assets/profilepic.png" alt="Foto de perfil" class="profile-img" />
+        <h2 class="text-knot-white mt-3">@Html.DisplayFor(model => model.UsuNome)</h2>
+        <h4 class="text-knot-white mt-1 mb-2">@@@Html.DisplayFor(model => model.UsuUsername)</h3>
+        <span class="badge bg-purple">@Html.DisplayFor(model => model.UsuTipo)</span>
+        <p class="profile-bio mt-2">
+            <strong>Bio:</strong> @Html.DisplayFor(model => model.UsuBio)
+        </p>
+
+        <div class="stats mt-3">
+            <span><strong>500</strong> seguidores</span>
+            &nbsp;&nbsp;
+            <span><strong>500</strong> seguindo</span>
+        </div>
+
+        <div class="social-icons mt-3">
+            <a href="#"><img class="pf-icon" src="/assets/ic-steam.png" alt="Steam" /></a>
+            <a href="#"><img class="pf-icon" src="/assets/ic-instagram.png" alt="Instagram" /></a>
+            <a href="#"><img class="pf-icon" src="/assets/ic-twitch.png" alt="Twitch" /></a>
+        </div>
+    </div>
+
+    <div class="favorites mt-5 mb-4 text-center">
+        <h3 class="text-knot-white mb-3">Jogos Favoritos</h3>
+        <div class="d-flex flex-wrap align-content-center justify-content-center">
+            <img src="/uploads/game1.png" alt="Game 1" class="favorite-img" />
+            <img src="/uploads/game2.png" alt="Game 2" class="favorite-img" />
+            <img src="/uploads/game3.png" alt="Game 3" class="favorite-img" />
+            <img src="/uploads/game4.png" alt="Game 3" class="favorite-img" />
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

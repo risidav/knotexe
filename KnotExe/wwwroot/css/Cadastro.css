@@ -1,0 +1,168 @@
+﻿.cd-container {
+    background-color: var(--kt-darklite);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    width: 100%;
+    max-width: 30rem;
+}
+
+.maincontainer
+{
+    display: flex;
+}
+
+.cornerbox
+{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.middlebox
+{
+    flex: 3;
+}
+
+@media only screen and (max-width: 900px) {
+    .cornerbox {
+        display: none;
+    }
+
+    .middlebox {
+        flex: 1;
+    }
+}
+
+.cd-icon {
+    background-color: var(--kt-purple);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+    background-image: url('https://img.icons8.com/ios-filled/50/ffffff/controller.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+.cd-h2 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.cd-p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #aaa;
+}
+
+.cd-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--kt-dark);
+    color: white;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-box {
+    flex: 1;
+    width: 100%;
+}
+
+    .password-container input {
+        flex: 1;
+    }
+
+    .password-container span {
+        cursor: pointer;
+    }
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.btn-cd {
+    background-color: var(--kt-purple);
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    color: var(--kt-white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    flex: 1;
+    width: 100%;
+}
+
+    .btn-cd:hover {
+        background-color: var(--kt-white);
+        color: var(--kt-dark);
+        transition: 0.2s;
+    }
+
+.account-type {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+    .account-type button {
+        width: 48%;
+        border: none;
+        padding: 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: var(--kt-dark);
+        color: var(--kt-white);
+        transition: 0.2s;
+    }
+
+        .account-type button.active {
+            background-color: var(--kt-purple);
+            color: var(--kt-white);
+            transition: 0.2s;
+        }
+
+.bottom-text {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+label a {
+    color: #a855f7;
+    text-decoration: none;
+}
+
+.options a,
+.bottom-text a {
+    text-decoration: none;
+    color: #a855f7;
+}

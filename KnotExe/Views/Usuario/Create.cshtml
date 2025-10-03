@@ -1,0 +1,58 @@
+﻿@model KnotExe.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UsuNome" class="control-label"></label>
+                <input asp-for="UsuNome" class="form-control" />
+                <span asp-validation-for="UsuNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuUsername" class="control-label"></label>
+                <input asp-for="UsuUsername" class="form-control" />
+                <span asp-validation-for="UsuUsername" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuEmail" class="control-label"></label>
+                <input asp-for="UsuEmail" class="form-control" />
+                <span asp-validation-for="UsuEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuSenhaHash" class="control-label"></label>
+                <input asp-for="UsuSenhaHash" class="form-control" />
+                <span asp-validation-for="UsuSenhaHash" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuBio" class="control-label"></label>
+                <input asp-for="UsuBio" class="form-control" />
+                <span asp-validation-for="UsuBio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuTipo" class="control-label"></label>
+                <input asp-for="UsuTipo" class="form-control" />
+                <span asp-validation-for="UsuTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

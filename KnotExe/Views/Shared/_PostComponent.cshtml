@@ -1,0 +1,49 @@
+﻿@model KnotExe.Models.Post
+<link rel="stylesheet" href="~/css/Timeline.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<div class="card knotpost bg-darklite-knot my-2 p-3 rounded">
+    <div class="d-flex align-items-start">
+        <a asp-controller="Usuario" asp-action="Perfil">
+        <img src="/assets/profilepic.png" class="rounded-circle me-3" style="width:48px; height:48px; object-fit:cover;" alt="Foto do usuário" />
+        </a>
+        <div class="w-100">
+            <div class="d-flex justify-content-between">
+                <a asp-controller="Usuario" asp-action="Perfil" asp-route-id="@Model.PosidUsuario" class="text-decoration-none">
+                <div>
+                        <span class="fw-bold text-knot-white">@Model.Usuario.UsuNome</span>
+                        <span class="text-muted">@@@Model.Usuario.UsuUsername</span>
+                </div>
+                </a>
+                <span class="text-muted small">@Model.PosData.ToString("dd/MM/yyyy HH:mm")</span>
+            </div>
+
+            <p class="card-text text-knot-white mt-2">
+                @Model.PosTexto
+            </p>
+
+            @* @if (!string.IsNullOrEmpty(@Model.PosMedia))
+            {
+                var extension = System.IO.Path.GetExtension(Model.PosMedia).ToLower();
+                if (extension == ".mp4")
+                {
+                    <video controls class="w-100 rounded mt-2">
+                        <source src="~/uploads/@Model.PosMedia" type="video/mp4" />
+                        Seu navegador não suporta vídeo.
+                    </video>
+                }
+                else
+                {
+                    <img src="~/uploads/@Model.PosMedia" class="w-75 time-img rounded mt-2" />
+                }
+            } *@
+
+
+            <div class="d-flex justify-content-left mt-3 text-knot-white">
+                <a class="btn btn-sm icon-knot-white"><i class="far fa-heart me-1"></i>Curtir</a>
+                <a class="btn btn-sm icon-knot-white"><i class="far fa-comment me-1"></i>Comentar</a>
+                <a class="btn btn-sm icon-knot-white"><i class="fas fa-retweet me-1"></i>Republicar</a>
+            </div>
+        </div>
+    </div>
+</div>

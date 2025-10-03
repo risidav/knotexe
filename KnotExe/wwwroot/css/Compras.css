@@ -1,0 +1,59 @@
+﻿.price-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.price-text {
+    text-align: center;
+    font-weight: bold;
+}
+
+.price-p {
+    text-align: center;
+    margin: auto;
+    max-width: 900px;
+    padding: 0 15px;
+}
+
+.plan-card {
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-component-y
+{
+    height: 5rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-component-x {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+    .plan-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .plan-card .card-title {
+        font-weight: bold;
+    }
+
+    .plan-card .card-subtitle {
+    }
+
+    .plan-card a.card-link {
+        display: inline-block;
+        padding: 10px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+    }

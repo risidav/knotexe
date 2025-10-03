@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KnotExe</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/KnotExe.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="icon" href="~/knotlogo.ico" />
+</head>
+<body class="bg-dark-knot">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-darklite-knot py-3 border-bottom border-dark box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold text-knot-title d-md-none" asp-area="" asp-controller="Home" asp-action="Index">KnotExe</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- DESKTOP NAVBAR -->
+                <div class="d-none d-md-flex flex-wrap justify-content-between align-items-center w-100">
+                    <a class="navbar-brand fw-bold text-knot-title knot-box" asp-area="" asp-controller="Home" asp-action="Index">KnotExe</a>
+                    <form class="d-flex knot-box" role="search">
+                        <input class="form-control me-2 search-bar bg-dark-knot text-knot-white py-1 border-0" type="search" placeholder="Digite aqui..." aria-label="Search" />
+                        <button class="btn btn-knot py-1" type="submit">Buscar</button>
+                    </form>
+                    <div class="btn-group knot-box">
+                        <button type="button" class="btn btn-secondary btn-navbar dropdown-toggle bg-darklite-knot text-white-knot border-0 py-0 px-0" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                            <img src="/assets/profilepic.png" class="navbar-picture rounded-2">
+                            <p class="knot-navtext my-0">username</p>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end bg-dark-knot">
+                            <li><a class="dropdown-item text-knot-white knot-nav" asp-controller="Usuario" asp-action="Cadastro">Perfil</a></li>
+                            <li><a class="dropdown-item text-knot-white knot-nav" asp-controller="Usuario" asp-action="Listas">Listas</a></li>
+                            <li><a class="dropdown-item text-knot-white knot-nav" asp-controller="Usuario" asp-action="Compras">Publicar</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-knot-white knot-nav" href="#">Sair</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- MOBILE NAVBAR -->
+                <div class="collapse navbar-collapse mt-3" id="navbarContent">
+                    <div class="d-flex flex-column w-100 d-md-none">
+                        <form class="d-flex mb-2" role="search">
+                            <input class="form-control me-2 search-bar bg-dark-knot text-knot-white py-1 border-0" type="search" placeholder="Digite aqui..." aria-label="Search" />
+                            <button class="btn btn-knot py-1" type="submit">Buscar</button>
+                        </form>
+                        <div class="btn-group">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li><a class="dropdown-item text-knot-white knot-nav" asp-controller="Usuario" asp-action="Cadastro">Perfil</a></li>
+                                <li><a class="dropdown-item text-knot-white knot-nav" asp-controller="Usuario" asp-action="Listas">Listas</a></li>
+                                <li><a class="dropdown-item text-knot-white knot-nav" asp-controller="Usuario" asp-action="Compras">Publicar</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <div class="container-fluid bg-dark-knot">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer bg-dark-knot">
+        <ul class="border-top border-dark nav justify-content-center">
+            <li class="nav-item knot-nav-item"><a class="nav-link px-2 text-knot-purple knot-link text-body-secondary" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="nav-item knot-nav-item"><a class="nav-link px-2 text-knot-purple knot-link text-body-secondary" asp-controller="Home" asp-action="Privacy">Política de Privacidade</a></li>
+            <li class="nav-item knot-nav-item"><a class="nav-link px-2 text-knot-purple knot-link text-body-secondary" asp-controller="Home" asp-action="Regras">Termos de Uso</a></li>
+            @* <li class="nav-item knot-nav-item"><a class="nav-link px-2 text-knot-purple knot-link text-body-secondary" asp-controller="Home" asp-action="Sobre">Sobre Nós</a></li> *@
+        </ul> <p class="text-center text-body-secondary text-knot-white">&copy; 2025 - KnotExe</p>
+    </footer> 
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
